@@ -109,6 +109,7 @@ ORDER BY
     transfer_date;
 ```
 JSON Ingestion
+
 1)
 
 The approach utilised here would be to land the raw JSON into the Bronze layer, clean and normalise in the Silver layer and finally compose tables in the Gold layer which are ready for analytics so it can be used by teams such as Business Intelligence.
