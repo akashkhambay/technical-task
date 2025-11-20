@@ -4,6 +4,7 @@ This document contains my solutions for the SQL, JSON ingestion and incremental 
 
 SQL
 1)
+``` sql
 SELECT 
        it.senderaccountid,
        it.receiveraccountid,
@@ -34,8 +35,9 @@ WHERE  it.transferstatus = 'completed'
        AND it.transfertime >= '2025-01-01'
        AND it.transfertime < '2025-04-01'
        AND sg.grouppod <> rg.grouppod;
-
+```
 2)
+```sql
 WITH live_clients  AS (
     SELECT
         c.ClientId
@@ -69,8 +71,9 @@ WHERE it.TransferStatus = 'completed'
 GROUP BY
     sc.ClientId,
     sc.ClientName;
-
+```
 3)
+```sql
 WITH daily_vertical_currency_totals   AS (
     SELECT
         CAST(it.TransferTime AS DATE) AS transfer_date,
@@ -104,7 +107,7 @@ ORDER BY
     sender_vertical,
     currency,
     transfer_date;
-
+```
 JSON Ingestion
 1)
 
